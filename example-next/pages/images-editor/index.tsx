@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { ImagePickerConf } from 'react-image-picker-editor'
 import { useState } from 'react'
 import styles from './index.module.scss'
-import 'react-image-picker-editor/dist/index.css'
 
 
 import dynamic from 'next/dynamic'
@@ -14,7 +13,6 @@ const ReactImagePickerEditor = dynamic(() => import('react-image-picker-editor')
 const ImagesEditor = () => {
 
     const config1: ImagePickerConf = {
-        borderRadius: '8px',
         language: 'en',
         width: '280px',
         height: '200px',

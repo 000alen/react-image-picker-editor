@@ -4,14 +4,13 @@ import ReactImagePickerEditor, {
   ImagePickerConf,
 } from "react-image-picker-editor";
 
-import "react-image-picker-editor/dist/index.css";
 import Header from "./components/Header/Header";
 import img1 from "./assets/images/1.jpg";
 import img2 from "./assets/images/2.jpg";
 
 const App = () => {
   const config1: ImagePickerConf = {
-    borderRadius: "8px",
+    // borderRadius: "8px",
     language: "pt",
     width: "280px",
     height: "200px",
@@ -21,7 +20,7 @@ const App = () => {
   };
 
   const config2: ImagePickerConf = {
-    borderRadius: "50%",
+    // borderRadius: "50%",
     language: "pt",
     objectFit: "contain",
     height: "200px",

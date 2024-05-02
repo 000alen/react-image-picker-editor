@@ -17,7 +17,7 @@ const initialConfig: ImagePickerConf = {
   objectFit: "cover",
   hideDeleteBtn: false,
   hideDownloadBtn: false,
-  hideEditBtn: false,
+  // hideEditBtn: false,
   hideAddBtn: false,
   compressInitial: null,
 };
@@ -25,13 +25,13 @@ const initialConfig: ImagePickerConf = {
 const initialState: IState = {
   maxHeight: 3000,
   maxWidth: 3000,
-  cropHeight: 150,
-  cropWidth: 150,
+  // cropHeight: 150,
+  // cropWidth: 150,
   maintainAspectRatio: true,
   format: "jpeg",
   arrayCopiedImages: [],
   originImageSrc: "",
-  basicFilters: undefined,
+  // basicFilters: undefined,
   quality: 100,
 };
 
@@ -39,13 +39,11 @@ const ReactImagePickerEditor = memo(
   ({
     config = {},
     imageSrcProp = "",
-    color = "#1e88e5",
     imageChanged = () => {},
   }: {
     config: ImagePickerConf;
     imageSrcProp?: string;
-    color?: string;
-    imageChanged?: Function;
+    imageChanged?: (uri: string | null) => void;
   }) => {
     const [state, setState] = useState<IState>({
       ...initialState,
