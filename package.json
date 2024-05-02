@@ -71,5 +71,8 @@
     "image",
     "compress image",
     "cropping images"
-  ]
+  ],
+  "dependencies": {
+    "antd": "5.15.2"
+  }
 }
