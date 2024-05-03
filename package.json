@@ -1,6 +1,6 @@
 {
   "name": "@000alen/react-image-picker-editor",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "React library for the selection, edition and compression of images in png, jpeg and webp formats.",
   "author": {
     "name": "Jose Alejandro Concepcion Alvarez",
@@ -16,14 +16,13 @@
   "scripts": {
     "build": "microbundle-crl --css-modules=false --format modern,cjs",
     "start": "microbundle-crl watch --css-modules=false --no-compress --format modern,cjs",
-    "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
     "test:lint": "eslint .",
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "release": "rm -rf ./dist && yarn build && cp ./LICENSE.md ./dist/ && cp ./README.md ./dist/ && npm publish",
+    "predeploy": "cd example && yarn install && yarn build",
+    "release": "rm -rf ./dist && yarn build && cp ./LICENSE.md ./dist/ && cp ./README.md ./dist/",
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
@@ -50,7 +49,6 @@
     "eslint-plugin-standard": "^5.0.0",
     "gh-pages": "^2.2.0",
     "microbundle-crl": "^0.13.11",
-    "npm-run-all": "^4.1.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
