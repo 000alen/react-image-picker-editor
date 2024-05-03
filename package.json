@@ -14,31 +14,17 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "microbundle-crl --css-modules=false --format modern,cjs",
-    "start": "microbundle-crl watch --css-modules=false --no-compress --format modern,cjs",
-    "test": "run-s test:unit test:lint test:build",
-    "test:build": "run-s build",
-    "test:lint": "eslint .",
-    "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
-    "test:watch": "react-scripts test --env=jsdom",
-    "predeploy": "cd example && yarn install && yarn build",
-    "release": "rm -rf ./dist && yarn build && cp ./LICENSE.md ./dist/ && cp ./README.md ./dist/",
-    "deploy": "gh-pages -d example/build"
+    "build": "tsc"
   },
   "peerDependencies": {
     "react": "^17.0.2"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.3",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^29.4.0",
     "@types/node": "^18.14.6",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.54.1",
     "@typescript-eslint/parser": "^5.54.1",
-    "babel-eslint": "^10.1.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.12.0",
     "eslint-config-standard-react": "^13.0.0",
@@ -48,12 +34,8 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-standard": "^5.0.0",
     "gh-pages": "^2.2.0",
-    "microbundle-crl": "^0.13.11",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
-    "sass": "^1.49.9",
-    "typescript": "4.9.3"
+    "typescript": "5.2.2"
   },
   "files": [
     "dist"
@@ -71,7 +53,9 @@
   ],
   "dependencies": {
     "@ant-design/icons": "^5.3.6",
-    "antd": "5.15.2"
+    "antd": "5.15.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "repository": {
     "url": "https://github.com/000alen/react-image-picker-editor",
