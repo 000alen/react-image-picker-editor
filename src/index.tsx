@@ -331,7 +331,7 @@ const ImagePicker = memo(
               </ParentSize>
             </div>
 
-            <Space.Compact block style={{ width: "100%" }}>
+            <Space wrap style={{ width: "100%" }}>
               {!configuration.hideAddBtn && (
                 <Button
                   icon={<UploadOutlined />}
@@ -362,7 +362,7 @@ const ImagePicker = memo(
                   {labels["Remove"]}
                 </Button>
               )}
-            </Space.Compact>
+            </Space>
           </Space>
         )}
       </React.Fragment>
