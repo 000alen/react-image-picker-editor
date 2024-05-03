@@ -1,23 +1,27 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { memo, useEffect, useMemo, useRef, useState } from "react";
-import { ImagePickerConf, IState } from "./models/index.models";
+import { ImagePickerConf, IState } from "./index.models";
 import labelEs from "./i18n/es.json";
 import labelPT from "./i18n/pt.json";
 import labelEn from "./i18n/en.json";
 import labelFr from "./i18n/fr.json";
 import labelDe from "./i18n/de.json";
-import { convertImageUsingCanvas } from "./functions/image-processing";
+import { convertImageUsingCanvas } from "./image-processing";
 import { Button, Image as ImageComponent, Skeleton, Space } from "antd";
 import ParentSize from "./ParentSize";
+import {
+  DeleteOutlined,
+  DownloadOutlined,
+  UploadOutlined,
+} from "@ant-design/icons";
 
-export * from "./models/index.models";
+export * from "./index.models";
 
 const initialConfig: ImagePickerConf = {
   language: "en",
   objectFit: "cover",
   hideDeleteBtn: false,
   hideDownloadBtn: false,
-  // hideEditBtn: false,
   hideAddBtn: false,
   compressInitial: null,
 };
@@ -25,17 +29,14 @@ const initialConfig: ImagePickerConf = {
 const initialState: IState = {
   maxHeight: 3000,
   maxWidth: 3000,
-  // cropHeight: 150,
-  // cropWidth: 150,
   maintainAspectRatio: true,
   format: "jpeg",
   arrayCopiedImages: [],
   originImageSrc: "",
-  // basicFilters: undefined,
   quality: 100,
 };
 
-const ReactImagePickerEditor = memo(
+const ImagePicker = memo(
   ({
     config = {},
     imageSrcProp = "",
@@ -297,7 +298,11 @@ const ReactImagePickerEditor = memo(
               </ParentSize>
             </div>
 
-            <Button title={labels["Upload a image"]} onClick={onUpload}>
+            <Button
+              icon={<UploadOutlined />}
+              title={labels["Upload a image"]}
+              onClick={onUpload}
+            >
               {labels["Upload a image"]}
             </Button>
           </Space>
@@ -326,15 +331,20 @@ const ReactImagePickerEditor = memo(
               </ParentSize>
             </div>
 
-            <Space style={{ width: "100%" }}>
+            <Space.Compact block style={{ width: "100%" }}>
               {!configuration.hideAddBtn && (
-                <Button title={labels["Upload a image"]} onClick={onUpload}>
+                <Button
+                  icon={<UploadOutlined />}
+                  title={labels["Upload a image"]}
+                  onClick={onUpload}
+                >
                   {labels["Upload a image"]}
                 </Button>
               )}
 
               {!configuration.hideDownloadBtn && (
                 <Button
+                  icon={<DownloadOutlined />}
                   title={labels["Download the image"]}
                   href={imageSrc as string}
                   download={imageName.current}
@@ -344,11 +354,15 @@ const ReactImagePickerEditor = memo(
               )}
 
               {!configuration.hideDeleteBtn && (
-                <Button title={labels["Remove"]} onClick={() => onRemove()}>
+                <Button
+                  icon={<DeleteOutlined />}
+                  title={labels["Remove"]}
+                  onClick={() => onRemove()}
+                >
                   {labels["Remove"]}
                 </Button>
               )}
-            </Space>
+            </Space.Compact>
           </Space>
         )}
       </React.Fragment>
@@ -356,4 +370,4 @@ const ReactImagePickerEditor = memo(
   }
 );
 
-export default ReactImagePickerEditor;
+export default ImagePicker;

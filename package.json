@@ -72,6 +72,7 @@
     "cropping images"
   ],
   "dependencies": {
+    "@ant-design/icons": "^5.3.6",
     "antd": "5.15.2"
   },
   "repository": {

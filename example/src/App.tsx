@@ -11,7 +11,7 @@ import img2 from "./assets/images/2.jpg";
 const App = () => {
   const config1: ImagePickerConf = {
     // borderRadius: "8px",
-    language: "pt",
+    // language: "pt",
     width: "280px",
     height: "200px",
     objectFit: "contain",
@@ -21,7 +21,7 @@ const App = () => {
 
   const config2: ImagePickerConf = {
     // borderRadius: "50%",
-    language: "pt",
+    // language: "pt",
     objectFit: "contain",
     height: "200px",
     width: "200px",
